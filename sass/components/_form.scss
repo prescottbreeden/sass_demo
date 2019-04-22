@@ -1,0 +1,17 @@
+.form {
+
+  &__btn {
+    margin-top: 2rem;
+    background-color: $color-yellow;
+    color: $color-black;
+    padding: 1rem;
+    border-radius: $default-border-radius;
+    box-shadow: $default-box-shadow;
+
+    &:hover {
+      cursor: pointer;
+      background-color: $color-gold;
+    }
+  }
+
+}

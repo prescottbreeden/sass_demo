@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ninja Gold</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+  </head>
+  <body>
+    <header class="header">
+      <h1 class="header__title">Ninja Gold</h1>
+    </header>
+    <div class="gold">
+      <h4 class="gold__title">Your Gold: <span class="gold__amount">{{money}}</span></h3>
+    </div>
+    <div class="locations">
+      <div class="locations__location">
+        <h3 class="locations__title">Farm</h3>
+        <p class="locations__description">(earns 10-20 golds)</p>
+        <form action="/process_money" method="post">
+          <input type="hidden" name="location" value="farm">
+          <button class="form__btn">Find Gold!</button>
+        </form>
+      </div>
+      <div class="locations__location">
+        <h3 class="locations__title">Cave</h3>
+        <p class="locations__description">(earns 5 - 10 gold)</p>
+        <form action="/process_money" method="post">
+          <input type="hidden" name="location" value="cave">
+          <button class="form__btn">Find Gold!</button>
+        </form>
+      </div>
+      <div class="locations__location">
+        <h3 class="locations__title">House</h3>
+        <p class="locations__description">(earns 2 - 5 gold)</p>
+        <form action="/process_money" method="post">
+          <input type="hidden" name="location" value="house">
+          <button class="form__btn">Find Gold!</button>
+        </form>
+      </div>
+      <div class="locations__location">
+        <h3 class="locations__title">Casino</h3>
+        <p class="locations__description">(earns 0 - 50 gold)</p>
+        <form action="/process_money" method="post">
+          <input type="hidden" name="location" value="casino">
+          <button class="form__btn">Find Gold!</button>
+        </form>
+      </div>
+    </div>
+    <div class="log">
+      <h5 class="log__title">Activities:</h5>
+      <div class="log__activity">
+        {% for item in log %}
+        {% if item.gold >= 0 %}
+        <p class="log__item log__item--win">
+          <span class="log__entry">Earned {{item.gold}} gold at the {{item.location}}!</span> <span>({{item.time}})</span> 
+        </p>
+        {% else %}
+        <p class="log__item log__item--loss">
+          <span class="log__entry">Earned {{item.gold}} gold at the {{item.location}}!</span> <span>({{item.time}})</span> 
+        </p>
+        {% endif %}
+        {% endfor %}
+      </div>
+    </div>
+  </body>
+</html>

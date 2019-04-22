@@ -1,0 +1,50 @@
+.gold {
+  padding: $default-padding;
+  background-color: $color-white;
+
+  &__title {
+    color: $color-black;
+  }
+
+  &__amount {
+    color: $color-gold;
+  }
+}
+
+.log {
+  // position: relative;
+  margin: 0 auto;
+  width: 80%;
+  padding: $default-padding;
+  border: 2px solid $color-black;
+  
+  &__title {
+    color: $color-orange;
+    font-size: 2rem;
+    text-align: center;
+    border-bottom: 1px solid $color-grey;
+    padding-bottom: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  &__activity {
+  }
+
+  &__item {
+    display: flex;
+    justify-content: space-between;
+
+    &--win {
+      color: green;
+    }
+
+    &--loss {
+      color: $color-red;
+    }
+
+  }
+
+  &__entry {
+    margin: .5rem;
+  }
+}

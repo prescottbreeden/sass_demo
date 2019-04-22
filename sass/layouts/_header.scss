@@ -1,0 +1,14 @@
+.header {
+  // background-color: $color-blue;
+  padding: $default-padding;
+
+  &__title {
+    text-align: center;
+    letter-spacing: 3px;
+    color: $color-orange;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid $color-grey;
+  }
+
+}
+

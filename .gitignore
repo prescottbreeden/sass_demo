@@ -1,0 +1,5 @@
+node_modules/
+package-lock.json
+flaskEnv
+.vscode
+__pycache__
